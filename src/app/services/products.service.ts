@@ -15,7 +15,7 @@ export class ProductsService {
 
   // get all products from db.json
   getAllProducts(): Observable<Product[]> {
-    let host = environment.host;
+    let host = (Math.random() > 0.1) ? environment.host : environment.unrechableHost;
     return this.http.get<Product[]>(host + "/products");
   }
 

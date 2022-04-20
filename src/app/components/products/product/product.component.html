@@ -17,10 +17,10 @@
     </nav>
 
 
-    <ng-container *ngIf="(products$ | async) as result" [ngSwitch]="result.dataState">
+    <ng-container class="mt-3" *ngIf="(products$ | async) as result" [ngSwitch]="result.dataState">
 
       <ng-container *ngSwitchCase="DataStateEnum.ERROR">
-        {{ result.erroMessage }}
+        {{ result.errorMessage }}
       </ng-container>
 
       <ng-container *ngSwitchCase="DataStateEnum.LOADING">

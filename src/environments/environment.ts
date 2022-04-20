@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   host: "http://localhost:3000",
+  unrechableHost: "http://localhost:45878",
+
 };
 
 /*
