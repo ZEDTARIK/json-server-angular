@@ -1,4 +1,6 @@
-import { Observable } from 'rxjs';
+import { DataStateEnum, AppDataState } from './../../../state/state';
+import { Observable, of } from 'rxjs';
+import { catchError, map, startWith } from 'rxjs/operators';
 import { ProductsService } from './../../../services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
@@ -10,14 +12,28 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductComponent implements OnInit {
 
-  products$: Observable<Product[]>;
+  products$: Observable<AppDataState<Product>> | null = null;
+  readonly DataStateEnum = DataStateEnum;
+
+
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
   }
 
-  onGetAllProduct(){
-    this.products$ = this.productsService.getAllProducts();
+  onGetAllProduct() {
+    this.products$ = this.productsService.getAllProducts()
+      .pipe(
+        map((data) => ({
+          dataState: DataStateEnum.LOADED,
+          data: data
+        })),
+        startWith({ dataState: DataStateEnum.LOADING }),
+        catchError(err => of({
+          dataState: DataStateEnum.ERROR,
+          errorMessage: err.message
+        }))
+      );
   }
 
 
