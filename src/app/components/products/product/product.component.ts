@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
       .pipe(
         map((data) => ({
           dataState: DataStateEnum.LOADED,
-          data: data
+          data
         })),
         startWith({ dataState: DataStateEnum.LOADING }),
         catchError(err => of({
@@ -41,7 +41,7 @@ export class ProductComponent implements OnInit {
       .pipe(
         map((data) => ({
           dataState: DataStateEnum.LOADED,
-          data: data
+          data
         })),
         startWith({ dataState: DataStateEnum.LOADING }),
         catchError(err => of({
@@ -57,7 +57,7 @@ export class ProductComponent implements OnInit {
       .pipe(
         map((data) => ({
           dataState: DataStateEnum.LOADED,
-          data: data
+          data
         })),
         startWith({ dataState: DataStateEnum.LOADING }),
         catchError(err => of({

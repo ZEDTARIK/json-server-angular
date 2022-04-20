@@ -9,25 +9,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-
+  host = (Math.random() > 0.1) ? environment.host : environment.unrechableHost;
   constructor(private http: HttpClient) {
   }
 
-  // get all products from db.json
   getAllProducts(): Observable<Product[]> {
-    let host = (Math.random() > 0.1) ? environment.host : environment.unrechableHost;
-    return this.http.get<Product[]>(host + "/products");
+
+    return this.http.get<Product[]>(this.host + '/products');
   }
 
-
   getSelectedProducts(): Observable<Product[]> {
-    let host = environment.host;
-    return this.http.get<Product[]>(host + "/products?Selected=true");
+    return this.http.get<Product[]>(this.host + '/products?Selected=true');
   }
 
   getAvailableProducts(): Observable<Product[]> {
-    let host = environment.host;
-    return this.http.get<Product[]>(host + "/products?Available=true");
+    return this.http.get<Product[]>(this.host + '/products?Available=true');
   }
 
 }
