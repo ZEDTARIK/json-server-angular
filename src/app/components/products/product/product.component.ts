@@ -33,6 +33,7 @@ export class ProductComponent implements OnInit {
         catchError(err => of({
           dataState: DataStateEnum.ERROR,
           errorMessage: err.message
+
         }))
       );
   }
