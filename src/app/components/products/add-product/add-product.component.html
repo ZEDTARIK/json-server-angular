@@ -1,1 +1,36 @@
-<p>add-product works!</p>
+<div class="row mt-2">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+
+        <form [formGroup]="productFrmGroup" autocomplete="off" >
+          <div class="form-group row">
+            <label for="ProductName" class="col-sm-2 col-form-label">Product Name</label>
+            <div class="col-sm-6">
+              <input formControlName="ProductName" type="text" id="ProductName" class="form-control"  placeholder="Product Name">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="Price" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-6">
+              <input formControlName="Price" type="number" id="Price" class="form-control"  placeholder="Product Price  $">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="Quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-6">
+              <input formControlName="Quantity" type="number" id="Quantity" class="form-control"  placeholder="Product Quantity">
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="card-footer">
+        <button (click)="onSubmit()" type="submit" class="btn btn-success text-center">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
