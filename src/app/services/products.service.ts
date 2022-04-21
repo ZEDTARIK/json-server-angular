@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  host = (Math.random() > 0.1) ? environment.host : environment.unrechableHost;
+  host = (Math.random() > 0.1) ? environment.host : environment.unreachableHost;
   constructor(private http: HttpClient) {
   }
 

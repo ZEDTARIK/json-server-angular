@@ -5,7 +5,7 @@ export enum DataStateEnum {
 }
 
 export interface AppDataState<T> {
-  dataState?: DataStateEnum,
-  data?: T,
-  errorMessage?: string
+  dataState?: DataStateEnum;
+  data?: T;
+  errorMessage?: string;
 }

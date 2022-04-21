@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  host: "http://localhost:3000",
-  unrechableHost: "http://localhost:45878",
+  host: 'http://localhost:3000',
+  unreachableHost: 'http://localhost:45878',
 
 };
 
