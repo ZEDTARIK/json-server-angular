@@ -93,9 +93,9 @@ export class ProductComponent implements OnInit {
 
   onDeleted(p: Product): void {
     this.productsService.DeleteProduct(p)
-    .subscribe(data => {
+    .subscribe(() => {
       this.onGetAllProduct();
-    })
+    });
   }
 
 
