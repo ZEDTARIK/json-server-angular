@@ -35,4 +35,8 @@ export class ProductsService {
     return this.http.put<Product>(this.host + '/products/' + product.id, product);
   }
 
+  DeleteProduct(product: Product): Observable<void> {
+    return this.http.delete<void>(this.host + '/products/' + product.id);
+  }
+
 }
