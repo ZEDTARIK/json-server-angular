@@ -19,9 +19,10 @@ export class ProductComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.onGetAllProduct();
   }
 
-  onGetAllProduct() {
+  onGetAllProduct(): void {
     this.products$ = this.productsService.getAllProducts()
       .pipe(
         map((data) => ({
