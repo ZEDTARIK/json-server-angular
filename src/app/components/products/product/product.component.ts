@@ -69,6 +69,22 @@ export class ProductComponent implements OnInit {
       );
   }
 
+  onSearchProduct(dataForm: any) {
+    this.products$ = this.productsService.SearchProducts(dataForm.keyword.trim())
+    .pipe(
+      map((data) => ({
+        dataState: DataStateEnum.LOADED,
+        data
+      })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({
+        dataState: DataStateEnum.ERROR,
+        errorMessage: err.message
+      }))
+    );
+
+  }
+
 
 
 }
