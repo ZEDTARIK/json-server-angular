@@ -51,6 +51,7 @@
               <th>Quantity</th>
               <th>Selected</th>
               <th>Available</th>
+              <th></th>
             </tr>
             <tr *ngFor="let p of result.data">
               <td>{{p.id }}</td>
@@ -58,6 +59,12 @@
               <td>{{p.Price}}</td>
               <td>{{p.Selected}}</td>
               <td>{{p.Available}}</td>
+              <td>
+                <button (click)="onSelected(p)" class="btn btn-sm" [ngClass]="p.Selected ? 'btn-info' : 'btn-dark' ">
+                  <span *ngIf="p.Selected">Selected</span>
+                  <span *ngIf="!p.Selected">UnSelected</span>
+                </button>
+              </td>
             </tr>
           </table>
         </div>

@@ -82,7 +82,13 @@ export class ProductComponent implements OnInit {
         errorMessage: err.message
       }))
     );
+  }
 
+  onSelected(p: Product) {
+    this.productsService.changeSelectedProduct(p)
+    .subscribe(data => {
+      p.Selected = data.Selected;
+    });
   }
 
 

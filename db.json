@@ -1,12 +1,12 @@
 {
-  "products":[
+  "products": [
     {
       "id": 411,
       "ProductName": "Computer",
       "Price": 63650,
       "Quantity": 96,
       "Available": true,
-      "Selected": false
+      "Selected": true
     },
     {
       "id": 514,
@@ -14,7 +14,7 @@
       "Price": 6520,
       "Quantity": 8,
       "Available": true,
-      "Selected": true
+      "Selected": false
     },
     {
       "id": 451,

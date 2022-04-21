@@ -30,4 +30,9 @@ export class ProductsService {
     return this.http.get<Product[]>(this.host + '/products?ProductName_like=' + keyword);
   }
 
+  changeSelectedProduct(product: Product): Observable<Product> {
+    product.Selected = !product.Selected;
+    return this.http.put<Product>(this.host + '/products/' + product.id, product);
+  }
+
 }
